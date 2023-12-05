@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+
+    <link rel="stylesheet" href="style.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </head>
+  <body>
+    <h1 id="checkout-title">Checkout Page</h1>
+    <main>
+      <div id="products-preview">
+        <div id="product-painel">
+          <div class="products">
+            <div class="product">
+              <img src="img/photo1.png" alt="" />
+              <div class="product-info">
+                <h2>Vintage Backbag</h2>
+                <div class="product-price">
+                  <p>
+                    <strong class="pp"> 25.98</strong>
+                    <span class="line-through"> 34.99</span>
+                  </p>
+                </div>
+                <div class="quantity-controller">
+                  <i class="fa-solid fa-minus"></i>
+                  <p class="quantity">1</p>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="product-removal">
+                  <button class="remove-product">Remove</button>
+                </div>
+                <div class="product-line-price"> 25.98</div>
+              </div>              
+            </div>
+
+            <div class="product">
+              <img src="img/photo2.png" alt="" />
+              <div class="product-info">
+                <h2>Levi Shoes</h2>
+                <div class="product-price">
+                  <p>
+                    <strong class="pp"> 45.99</strong>
+                    <span class="line-through"> 54.99</span>
+                  </p>
+                </div>
+                <div class="quantity-controller">
+                  <i class="fa-solid fa-minus"></i>
+                  <p class="quantity">1</p>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="product-removal">
+                  <button class="remove-product">Remove</button>
+                </div>
+                <div class="product-line-price"> 45.99</div>
+              </div>            
+            </div>
+
+            <div class="product">
+              <img src="img/photo3.jpg" alt="" />
+              <div class="product-info">
+                <h2>Antique Clock</h2>
+                <div class="product-price">
+                  <p>
+                    <strong class="pp"> 74.99</strong>
+                    <span class="line-through"> 94.99</span>
+                  </p>
+                </div>
+                <div class="quantity-controller">
+                  <i class="fa-solid fa-minus"></i>
+                  <p class="quantity">1</p>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="product-removal">
+                  <button class="remove-product">Remove</button>
+                </div>
+                <div class="product-line-price"> 74.99</div>
+              </div>
+            </div>
+            <marquee behavior="scroll" direction="left" scrollamount="10" style="height: 1.5rem; background-color: yellow;">| FREE SHIPPING OVER $300 |---| FREE SHIPPING OVER $300 |---| FREE SHIPPING OVER $300 |---| FREE SHIPPING OVER $300 |</marquee>
+          </div>
+          <div class="buy-detail" id="cart-subtotal">
+            <p>Subtotal:</p>
+            <p class="sub-total ">0</p>
+          </div>
+          <div class="buy-detail" id="cart-tax">
+            <p>Tax(%18)</p>
+            <p class="tax-total">0</p>
+          </div>
+          <div class="buy-detail" id="cart-shipping">
+            <p>Shipping Fee:</p>
+            <p class="shipping">0</p>
+          </div>
+          <div class="buy-detail" id="cart-total">
+            <p>TOTAL:</p>
+            <p class="total">0</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
