@@ -8,10 +8,8 @@ const shippingFree=300;
       localStorage.setItem("vergi",taxRate); //VERGI ISMIYLE LOCAL'E KAYDETTIM
       localStorage.setItem("kargo", shipping);//KARGO ISMIYLE LOCAL'E KAYDETTIM
       localStorage.setItem("kargoBedava",shippingFree);
-
-//       sessionStorage.setItem("vergi",taxRate);
-//       sessionStorage.setItem("kargo",shipping);
-//       sessionStorage.setItem("kargoBedava",shippingFree);
+      sepetFiyatı();
+      
 })
 
 //CAPTURING ILE TOPLU EVENT TANIMLAMA
@@ -23,6 +21,7 @@ productsDiv.addEventListener("click",(item)=>{
             console.log("plus btn is clicked!");
             item.target.previousElementSibling.innerText++;
             fiyatHesapla(item.target);
+            sepetFiyatı();
       }
       else if(item.target.className=="fa-solid fa-minus"){//CLASSNAME'DE TUM ISIM YAZILMALI
             console.log("minus btn is clicked!");
@@ -30,10 +29,12 @@ productsDiv.addEventListener("click",(item)=>{
             if(item.target.parentElement.querySelector(".quantity").innerText>1){
                   item.target.parentElement.querySelector(".quantity").innerText--;
                   fiyatHesapla(item.target);
+                  sepetFiyatı();
 
             } else if(confirm("PRODUCT WILL BE REMOVED ?")){
                   item.target.parentElement.parentElement.parentElement.remove();
                   fiyatHesapla(item.target);
+                  sepetFiyatı();
                   //URUNU SEPETTEN SILMEK
             }
       }
@@ -43,6 +44,7 @@ productsDiv.addEventListener("click",(item)=>{
             if(confirm("PRODUCT WILL BE REMOVED ?")){
                   item.target.parentElement.parentElement.parentElement.remove();
                   fiyatHesapla(item.target);
+                  sepetFiyatı;
                   //URUNU SEPETTEN SILMEK
             }
       }
@@ -59,10 +61,13 @@ const fiyatHesapla =(item)=>{
       const adet = infoDiv.querySelector(".quantity-controller .quantity").innerText;
       const sonuc = (fiyat*adet).toFixed(2);
       infoDiv.querySelector(".product-line-price").innerText = sonuc;
+}
 
+const sepetFiyatı=()=>{
       let sum=0;
       const divs =document.querySelectorAll(".product-line-price");
-      divs.forEach( (x) => sum += parseFloat(x.innerText) ); //PARSE.FLOAT()==NUMBER()
+      divs.forEach( (x) => sum += parseFloat(x.innerText) ); 
+      //PARSE.FLOAT()==NUMBER()
       
       let taxTotal = sum * localStorage.getItem("vergi");
       let shipping = (sum>0 && sum<300)? 15:0;
